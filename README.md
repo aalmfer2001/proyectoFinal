@@ -18,7 +18,7 @@ A su vez va a ver un usuario admin el cual tendrá una vista diferente de la web
 
 <h2>Tecnologías</h2>
 
-Constará de una landing page de presentación de la página que su estilo estará creado enteramente con css , los datos de la web serán almacenados en una base de datos de mysql, la pagina sera lanzada desde una instancia de Amazon Web Service ,se usará javascript en el frontend en la medida de lo posible, los formularios de las secciones de productos personalizados tendrá un botón el cual rellene la información de estos mediante una api y el proyecto en su mayoría con laravel breeze y para el estilo de las seccines a parte de la landing serán creados con tailwind.
+Constará de una landing page de presentación de la página que su estilo estará creado enteramente con css , los datos de la web serán almacenados en una base de datos de mysql, la pagina sera lanzada desde una instancia de Amazon Web Service ,se usará javascript en el frontend en la medida de lo posible, los formularios de las secciones de productos personalizados tendrá un botón el cual rellene la información de estos mediante una api y el proyecto en su mayoría con laravel breeze y para el estilo de las secciones a parte de la landing serán creados con tailwind.
 
 
 <h2>Estructura de la base de datos provisional</h2>
