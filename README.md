@@ -27,3 +27,18 @@ Constará de una landing page de presentación de la página que su estilo estar
 
 <h2>Diseño provisonal de la web</h2>
 
+<h3>Paleta de colores seleccionada</h3>
+
+![image](https://user-images.githubusercontent.com/123627142/230800700-ef962d0d-de52-4768-a042-835711389f73.png)
+
+<h3>Fuente seleccionada para títulos</h3>
+
+Prata
+
+<h3>Fuente seleccionada para párrafos</h3>
+
+Arial
+
+
+
+
