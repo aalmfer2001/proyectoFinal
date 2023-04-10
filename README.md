@@ -41,7 +41,7 @@ Arial
 
 <h3>Visualizacion de la web provisional</h3>
 
-
+- [Enlace al diseño en figma](https://www.figma.com/file/njiOFnphpiaWEPNLJFJ4qB/proyectoFinal_DISJUALTO?node-id=0%3A1&t=WBlKsXo1qxRqiOiM-1)
 
 
 
