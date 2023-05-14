@@ -46,7 +46,7 @@ Arial
 
 <h1>Checkpoint </h1>
 <h2>Vídeo</h2>
-Se encuentra subido en el repo
+[Enlace para descargarlo](https://drive.google.com/file/d/1iljdXfgBNkktmF23GHU6GZX1pCrNMP7L/view?usp=share_link)
 
 <h3>Lo que he realizado</h3>
 
