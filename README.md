@@ -44,5 +44,13 @@ Arial
 - [Enlace al diseño en figma](https://www.figma.com/file/njiOFnphpiaWEPNLJFJ4qB/proyectoFinal_DISJUALTO?node-id=0%3A1&t=WBlKsXo1qxRqiOiM-1)
 
 
+<h1>Checkpoint </h1>
+<h2>Vídeo</h2>
+Se encuentra subido en el repo
+
+<h2>Lo que he realizado</h2>
+
+
+<h2>Lo que me queda</h2>
 
 
