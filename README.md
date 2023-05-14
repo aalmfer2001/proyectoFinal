@@ -48,9 +48,9 @@ Arial
 <h2>Vídeo</h2>
 Se encuentra subido en el repo
 
-<h2>Lo que he realizado</h2>
+<h3>Lo que he realizado</h3>
 
 
-<h2>Lo que me queda</h2>
+<h3>Lo que me queda</h3>
 
 
