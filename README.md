@@ -49,16 +49,16 @@ Arial
 [Enlace para descargarlo](https://drive.google.com/file/d/1iljdXfgBNkktmF23GHU6GZX1pCrNMP7L/view?usp=share_link)
 
 <h3>Lo que he realizado</h3>
--Base de datos junto a migraciones factorias y seeder
--El login y el register funcional 
--Pagina principal usando solo html y css a medias ya que tengo que mejorarla
--Seccion de productos especiales con el estilo a mejorar
+-Base de datos junto a migraciones factorias y seeder<br>
+-El login y el register funcional <br>
+-Pagina principal usando solo html y css a medias ya que tengo que mejorarla<br>
+-Seccion de productos especiales con el estilo a mejorar<br>
 
 <h3>Lo que me queda</h3>
--Hacer la seccion de pedido,producto y etiqueta personalizada
--Mejorar el estilo
--Añadir api con javascript de localidades
--Hacer la web para usuarios normales y para admin
--subir el proyecto a amazon
+-Hacer la seccion de pedido,producto y etiqueta personalizada<br>
+-Mejorar el estilo<br>
+-Añadir api con javascript de localidades<br>
+-Hacer la web para usuarios normales y para admin<br>
+-subir el proyecto a amazon<br>
 
 
