@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
     <title>DISJUALTO</title>
-    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js','resources/css/styleProducto.css']); ?>
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js','resources/css/stylePedido.css']); ?>
 </head>
 <body class="bg-crema">
 
@@ -38,36 +38,43 @@
       </div>
       <div class="contenedor">
 
-    <h1 class="text-center text-4xl font-bold titulo">Catalogo</h1>
-    <h2 class="text-center text-2xl font-bold titulo">Visualiza todos los productos que tenemos</h2>
-    <div class="flex items-center justify-center rounded-lg botonAjustado">
-        <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route("producto.crear")); ?>"><?php echo app('translator')->get('app.crear'); ?></a>
-    </div>
-    <div class="container">
-        
+    <h1 class="text-center text-4xl font-bold titulo">Mis pedidos</h1>
+    <h2 class="text-center text-2xl font-bold titulo">Crea y visualiza tus pedidos</h2>
 
-        <?php $__currentLoopData = $datos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-        <div class="card">
-            <img src="<?php echo e($item->imgPro); ?>" alt="Imagen 1">
-            <div class="card-content">
-              <h3 class="card-title"><?php echo e($item->nomPro); ?></h3>
-              <p class="card-price"><?php echo e($item->precioPro); ?> €</p>
-              <p class="card-description"><?php echo e($item->tipoPro); ?></p>
-              <p class="card-description"><?php echo e($item->formatoPro); ?></p>
-              <div class="card-actions">
-                <a href="#" class="card-action-edit"><a class="" href="<?php echo e(route("producto.editar", $item->idPro)); ?>"><svg width="24px" height="24px" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>edit [#1479]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-99.000000, -400.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M61.9,258.010643 L45.1,258.010643 L45.1,242.095788 L53.5,242.095788 L53.5,240.106431 L43,240.106431 L43,260 L64,260 L64,250.053215 L61.9,250.053215 L61.9,258.010643 Z M49.3,249.949769 L59.63095,240 L64,244.114985 L53.3341,254.031929 L49.3,254.031929 L49.3,249.949769 Z" id="edit-[#1479]"> </path> </g> </g> </g> </g></svg></a></a>
-                <a href="#" class="card-action-delete"><a class=""  href="<?php echo e(route("producto.borrar", $item->idPro)); ?>"><svg width="30px" height="30px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#ffffff" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M45.49,54.87h-27a1,1,0,0,1-1-1l-2-36H48.46l-2,36A1,1,0,0,1,45.49,54.87Z"></path><path d="M51,17.86H13c-.28,0-.5-.16-.5-.35l.93-4.35a.49.49,0,0,1,.5-.3H50.07a.49.49,0,0,1,.5.3l.93,4.35C51.5,17.7,51.28,17.86,51,17.86Z"></path><line x1="24" y1="23.44" x2="24" y2="48.44"></line><line x1="32" y1="23.44" x2="32" y2="48.44"></line><line x1="40" y1="23.44" x2="40" y2="48.44"></line><path d="M25.73,12.86V7.57a1,1,0,0,1,1-1H37.27a1,1,0,0,1,1,1v5.29"></path></g></svg></a></a>
-              </div>
-            </div>
-          </div>
-
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        
+    <section class="section-container">
+      <h2>Listado de Pedidos</h2>
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Total</th>
+              <th>Localidad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php $__currentLoopData = $datos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <tr>
+              <td><?php echo e($datos->idPedido); ?></td>
+              <td><?php echo e($datos->totalPedi); ?></td>
+              <td><?php echo e($datos->localiPedi); ?></td>
+              <td>
+                <a  class="action-link"href="<?php echo e(route("pedido.visualizar", $datos->idPedido)); ?>">Ver</a>
+                <a  class="action-link">Editar</a>
+                <a  class="action-link" href="<?php echo e(route("pedido.borrar", $datos->idPedido)); ?>">Borrar</a>
+              </td>
+            </tr>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
 
     </div>
 
 
 
 </body>
-</html><?php /**PATH C:\xampp\htdocs\proyectoFinal\resources\views/productos/main.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\xampp\htdocs\proyectoFinal\resources\views/pedidos/main.blade.php ENDPATH**/ ?>

@@ -130,9 +130,7 @@
 
         <div class="flex items-center justify-end mt-4">
             <?php if(Route::has('password.request')): ?>
-                <a class="underline text-sm text-white hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="<?php echo e(route('password.request')); ?>">
-                    <?php echo app('translator')->get('app.forgotPass'); ?>
-                </a>
+                
             <?php endif; ?>
             
             <a class="ml-3 bg-marron hover:bg-amber-700 text-white font-bold py-1 px-3 rounded" href="<?php echo e(route("register")); ?>"> <?php echo app('translator')->get('app.register'); ?></a>

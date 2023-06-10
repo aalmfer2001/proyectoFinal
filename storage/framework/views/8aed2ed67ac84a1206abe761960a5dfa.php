@@ -12,23 +12,26 @@
             <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="nomPro" required value="<?php echo e($productoUpdate->nomPro); ?>" required/>
             <br>
             <label><?php echo app('translator')->get('app.tipo'); ?></label>
-            <select  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="tipoPro" required>
-                <option value="con azucar">Con Azucar</option>
-                <option value="sin azucar">Sin Azucar</option>
+            <select  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="tipoPro" value="<?php echo e($productoUpdate->tipoPro); ?>" required>
+                <option value="Con azucar">Con Azucar</option>
+                <option value="Sin azucar">Sin Azucar</option>
+                <option value="Con edulcorante">Con edulcorante</option>
             </select>
             <br>
             <label><?php echo app('translator')->get('app.formato'); ?></label>
-            <select  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="formatoPro" required>
-                <option value="cuadrado">Cuadrado</option>
-                <option value="redonda">Redonda</option>
-                <option value="helada">Helada</option>
+            <select  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="formatoPro" value="<?php echo e($productoUpdate->formatoPro); ?>"  required>
+                <option value="Envuelto">Envuelto</option>
+                <option value="Granel">Granel</option>
+                <option value="Blister">Blister</option>
             </select>
             <br>
-            <label><?php echo app('translator')->get('app.peso'); ?></label>
-            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="pesoPro" required value="<?php echo e($productoUpdate->pesoPro); ?>"/>
+            
+            <label>precio</label>
+            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="precioPro" value="<?php echo e($productoUpdate->precioPro); ?>" required/>
             <br>
-            <label><?php echo app('translator')->get('app.descripcion'); ?></label>
-            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="descPro" value="<?php echo e($productoUpdate->descPro); ?>" required/>
+
+            <label>Imagen</label>
+            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="imgPro" value="<?php echo e($productoUpdate->imgPro); ?>" required/>
             <br>
         
             <div class="flex items-center justify-center">
