@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pedido', function (Blueprint $table) {
-            $table->id("idPedido");
+            $table->unsignedBigInteger("idPedido");
             $table->string("localiPedi");
             $table->float("totalPedi");
             $table->unsignedBigInteger('idPro');
@@ -21,6 +21,8 @@ return new class extends Migration
 
             $table->foreign('idPro')->references('idPro')->on('producto')->onDelete('cascade');
             $table->foreign('idUsu')->references('idUsu')->on('users')->onDelete('cascade');
+
+            $table->primary(['idPro', 'idUsu']);
 
         });
     }
