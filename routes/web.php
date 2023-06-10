@@ -1,6 +1,9 @@
 <?php
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductoEspController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\EtiquetaPersController;
 use App\Http\Controllers\PaginaPrincipalController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect("/", "inicio")->name("home") ;
+
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+
 
 Route::group(["prefix" => "inicio", 
               "as" => "inicio.",
@@ -35,6 +42,45 @@ Route::group(["prefix" => "productosEsp",
     Route::get("/borrar/{idProEsp}", [ProductoEspController::class, "borrar"])->name("borrar") ;
     Route::get("/editar/{idProEsp}", [ProductoEspController::class, "editar"])->name("editar") ;
     Route::post("/actualizar/{idProEsp}", [ProductoEspController::class, "guardarEdicion"])->name("guardarEdicion") ;
+}) ;
+
+
+Route::group(["prefix" => "etiquetasPers", 
+              "as" => "etiquetaPers.",
+              "middleware" => ["auth"]], function() 
+{
+    Route::get("/",         [EtiquetaPersController::class, "listar"])->name("listar") ;
+    Route::get("/crear",    [EtiquetaPersController::class, "crear"])->name("crear") ;
+    Route::post("/guardar",  [EtiquetaPersController::class, "guardar"])->name("guardar") ;
+    Route::get("/borrar/{idEtiq}", [EtiquetaPersController::class, "borrar"])->name("borrar") ;
+    Route::get("/editar/{idEtiq}", [EtiquetaPersController::class, "editar"])->name("editar") ;
+    Route::post("/actualizar/{idEtiq}", [EtiquetaPersController::class, "guardarEdicion"])->name("guardarEdicion") ;
+}) ;
+
+Route::group(["prefix" => "productos", 
+              "as" => "producto.",
+              "middleware" => ["auth"]], function() 
+{
+    Route::get("/",         [ProductoController::class, "listar"])->name("listar") ;
+    Route::get("/crear",    [ProductoController::class, "crear"])->name("crear") ;
+    Route::post("/guardar",  [ProductoController::class, "guardar"])->name("guardar") ;
+    Route::get("/borrar/{idPro}", [ProductoController::class, "borrar"])->name("borrar") ;
+    Route::get("/editar/{idPro}", [ProductoController::class, "editar"])->name("editar") ;
+    Route::post("/actualizar/{idPro}", [ProductoController::class, "guardarEdicion"])->name("guardarEdicion") ;
+}) ;
+
+
+Route::group(["prefix" => "pedidos", 
+              "as" => "pedido.",
+              "middleware" => ["auth"]], function() 
+{
+    Route::get("/",         [PedidoController::class, "listar"])->name("listar") ;
+    Route::get("/crear",    [PedidoController::class, "crear"])->name("crear") ;
+    Route::post("/guardar",  [PedidoController::class, "guardar"])->name("guardar") ;
+    Route::get("/visualizar/{idPedido}", [PedidoController::class, "visualizar"])->name("visualizar") ;
+    Route::get("/borrar/{idPedido}", [PedidoController::class, "borrar"])->name("borrar") ;
+    Route::get("/editar/{idPedido}", [PedidoController::class, "editar"])->name("editar") ;
+    Route::post("/actualizar/{idPedido}", [PedidoController::class, "guardarEdicion"])->name("guardarEdicion") ;
 }) ;
 
 Route::group(["prefix" => "users", 
