@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form class="text-white" method="POST" action="{{ route('user.guardar') }}">
+    <form class="" method="POST" action="{{ route('user.guardar') }}">
         @csrf
 
         <!-- Name -->
