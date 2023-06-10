@@ -20,6 +20,6 @@ class UserController extends Controller
         $user->email_verified_at=Carbon::now()->toDateTimeString();
         $user->password=Hash::make($req->input('password'));
         $user->save();
-        return redirect()->route('/paginaPrincipal');
+        return redirect()->route('login');
     }
 }

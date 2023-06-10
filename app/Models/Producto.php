@@ -19,4 +19,6 @@ class Producto extends Model
     return $this->belongsToMany("App\Models\User","pedido","idPro","idUsu")->withPivot('totalPedi', 'localiPedi');
 }
 
+
+
 }

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,20 +8,29 @@ class Pedido extends Model
 {
     use HasFactory;
 
-
     protected $table = 'pedido';
+    protected $primaryKey = ['idPro', 'idUsu'];
+    public $incrementing = false;
 
     protected $fillable = [
-        'idUsu', 'idPro', 'totalPedi', 'localiPedi'
+        'idPedido','idPro', 'idUsu', 'totalPedi', 'localiPedi'
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'idUsu');
     }
 
-    public function product()
+    public function producto()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Producto::class, 'idPro');
     }
+
+    public function scopeEncargo($query)
+    {
+        return $query->where("idUsu", auth()->user()->idUsu);
+    }
+
+
 }
+
