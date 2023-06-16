@@ -9,10 +9,11 @@ class EtiquetaPersController extends Controller
 {
     //
     public function listar(Request $req) 
-    {       
-
+    {     
         
-        return view("etiquetasPers.main", ["datos" => EtiquetaPers::Encargo()->get() ]) ;
+
+        $datosAdmin= EtiquetaPers::all();
+        return view("etiquetasPers.main", ["datos" => EtiquetaPers::Encargo()->get() ],["datosAdmin" => $datosAdmin ]) ;
     }
 
     

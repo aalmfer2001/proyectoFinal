@@ -16,9 +16,11 @@ class UserController extends Controller
     {
         $user = new User;
         $user->name=$req->input('name');
+        $user->localidad=$req->input('localidad');
         $user->email=$req->input('email');
         $user->email_verified_at=Carbon::now()->toDateTimeString();
         $user->password=Hash::make($req->input('password'));
+        $user->rol="usuario";
         $user->save();
         return redirect()->route('login');
     }

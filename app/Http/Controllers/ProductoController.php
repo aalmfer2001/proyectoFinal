@@ -4,14 +4,39 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductoController extends Controller
 {
     //
-    public function listar(Request $req) 
-    {  
-        return view("productos.main", ["datos" => Producto::all() ]) ;
-    }
+    public function listar(Request $req)
+{
+    $productos = Producto::paginate(8);
+
+    return view("productos.main", ["datos" => $productos]);
+}
+
+public function visualizar($id)
+{
+    $userId = DB::table('producto')
+    ->join('pedido', 'pedido.idPro', '=', 'producto.idPro')
+    ->select('pedido.idUsu')->first()->idUsu;
+    $proPedido = DB::table('producto')
+        ->join('pedido', 'pedido.idPro', '=', 'producto.idPro')
+        ->select('producto.*')
+        ->distinct()
+        ->where('idPedido', $id)
+        ->where('idUsu',$userId)
+        ->get();
+    // $producto=Producto::whereIn('idPro', function ($query,$idPro){
+    //     $query->select($id)
+    //     ->from('pedido');})
+    //     ->get();
+        
+        
+
+    return view('pedidos.visualizar', ["datos" => $proPedido]);
+}
 
     
 

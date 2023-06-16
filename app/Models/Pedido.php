@@ -9,21 +9,21 @@ class Pedido extends Model
     use HasFactory;
 
     protected $table = 'pedido';
-    protected $primaryKey = ['idPro', 'idUsu'];
-    public $incrementing = false;
+    protected $primaryKey = 'idInsertPed';
+
 
     protected $fillable = [
-        'idPedido','idPro', 'idUsu', 'totalPedi', 'localiPedi'
+        'idInsertPed', 'idUsu', 'idPro', 'idPedido'
     ];
 
-    public function user()
+    public function usuarios()
     {
-        return $this->belongsTo(User::class, 'idUsu');
+        return $this->belongsToMany(User::class, 'pedido', 'idInsertPed', 'idUsu');
     }
 
-    public function producto()
+    public function productos()
     {
-        return $this->belongsTo(Producto::class, 'idPro');
+        return $this->belongsToMany(Producto::class, 'pedido', 'idInsertPed', 'idPro');
     }
 
     public function scopeEncargo($query)

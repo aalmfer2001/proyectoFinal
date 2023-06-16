@@ -11,21 +11,22 @@ class ProductoEspController extends Controller
     public function listar(Request $req) 
     {       
 
-        
-        return view("productosEsp.main", ["datos" => ProductoEsp::Encargo()->get() ]) ;
+        $datosAdmin= ProductoEsp::all();
+
+        return view("productosEsp.main", ["datos" => ProductoEsp::Encargo()->get() ],["datosAdmin" => $datosAdmin ]) ;
     }
 
     
 
     public function crear(Request $req) 
     {
-        // TODO
+        
         return view("productosEsp.crear");
     }
 
     public function guardar(Request $req) 
     {
-        // TODO
+        
         $objeto = new ProductoEsp;
         $objeto->idUsu=auth()->user()->idUsu;
         $objeto->nomProEsp=$req->input('nomProEsp');
