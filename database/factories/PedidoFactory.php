@@ -20,12 +20,10 @@ class PedidoFactory extends Factory
             //
             
 
-            "totalPedi" =>fake()->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 500),
-            "localiPedi" =>fake()->streetName,
-            "idUsu" => fake()->numberBetween(1,4), 
-            "idPro" => fake()->numberBetween(1,10),
-            "idPedido" => fake()->numberBetween(1,2),
             
+            "idUsu" => 2,
+            "idPro" => fake()->numberBetween(1,5),
+            "idPedido" => fake()->numberBetween(1,2),
 
         ];
     }
