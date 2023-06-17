@@ -11,6 +11,8 @@
 </head>
 <body class="bg-crema">
 
+    
+
     <div class="cabecera">
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
@@ -36,16 +38,41 @@
     
         
     </div>
+
+    
     <section class="productos-section">
+        
         <h2>Productos del Pedido</h2>
+
         <ul class="productos-list">
-          <li class="producto-item">
-            <h3 class="producto-nombre">{{ $pedido}}</h3>
-            <p class="producto-precio">Precio: {{ $pedido}}</p>
-            <p class="producto-descripcion"></p>
-          </li>
-          
+            @foreach ($datos as $datos)
+        <li class="producto-item">
+            <div class="producto">
+        <div class="imagen">
+            <img src="{{ URL::asset($datos->imgPro) }}" alt="Imagen del producto">
+        </div>
+        <div class="detalles">
+            <h2>{{ $datos->nomPro }}</h2>
+            <p>Tipo: {{ $datos->tipoPro }}</p>
+            <p>Formato: {{ $datos->formatoPro }}</p>
+            <p>Precio: {{ $datos->precioPro }}</p>
+            @if (Auth::user()->rol==="usuario")
+            <a href="#" class="card-action-delete"><a class=""  href="{{route("pedido.borrarFila",$datos->idPro)}}"><svg width="30px" height="30px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#ec0000" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M45.49,54.87h-27a1,1,0,0,1-1-1l-2-36H48.46l-2,36A1,1,0,0,1,45.49,54.87Z"></path><path d="M51,17.86H13c-.28,0-.5-.16-.5-.35l.93-4.35a.49.49,0,0,1,.5-.3H50.07a.49.49,0,0,1,.5.3l.93,4.35C51.5,17.7,51.28,17.86,51,17.86Z"></path><line x1="24" y1="23.44" x2="24" y2="48.44"></line><line x1="32" y1="23.44" x2="32" y2="48.44"></line><line x1="40" y1="23.44" x2="40" y2="48.44"></line><path d="M25.73,12.86V7.57a1,1,0,0,1,1-1H37.27a1,1,0,0,1,1,1v5.29"></path></g></svg></a></a>
+            @endif
+        </div>
+    </div>
+    
+        
+        </li>
+        @endforeach
         </ul>
+
+        
+    
+
+            
+
+        <a  class=" boton-login" href="{{route("pedido.listar")}}">Volver a Menu</a>
       </section>
       
 

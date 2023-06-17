@@ -75,6 +75,18 @@
   text-decoration: none; 
 }
 
+.boton-logout {
+  background-color: #674d3c;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 20px;
+  font-family: titulo;
+  text-decoration: none; 
+}
+
 
 .buttonLogin {
   background-color: #a2836e;
@@ -368,7 +380,9 @@ footer a{
   margin: 5px 0 0 0;
 }
 
-
+#seccionTabla{
+  margin-top: 150px;
+}
 
 
 

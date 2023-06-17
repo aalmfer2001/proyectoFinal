@@ -102,6 +102,18 @@
     text-decoration: none; 
   }
 
+  .boton-logout {
+    background-color: #674d3c;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 20px;
+    font-family: titulo;
+    text-decoration: none; 
+  }
+
 
   
   
@@ -166,6 +178,7 @@ h2 {
 
 .table-container {
   overflow-x: auto;
+  
 }
 
 .table {
@@ -176,7 +189,7 @@ h2 {
 .table th,
 .table td {
   padding: 10px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #ccc;
 }
 
@@ -204,7 +217,74 @@ h2 {
   background-color: #0056b3;
 }
 
-/* visualizar pedido*/
+/* visualizar pedido v1*/
+
+.producto {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.imagen img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.detalles h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.detalles p {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+
+/* seccion crear*/
+.pedido-insertar-producto {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+select, input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* visualizar pedido v2*/
+
+
 
 .productos-section {
   margin: 20px;

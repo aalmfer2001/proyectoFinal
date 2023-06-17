@@ -13,17 +13,32 @@
             <input class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="nomProEsp" required />
             <br>
             <label><?php echo app('translator')->get('app.tipo'); ?></label>
-            <select  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="tipoProEsp" required>
-                <option value="Con azucar">Con Azucar</option>
-                <option value="Sin azucar">Sin Azucar</option>
-                <option value="Con edulcorante">Con edulcorante</option>
+            <script>
+                $(document).ready(function() {
+                    var tipoPro = ["con azucar", "sin azucar", "con edulcorante"];
+            
+                    $.each(tipoPro, function(index, value) {
+                        $("#tipoPro").append(new Option(value, value));
+                    });
+                });
+            </script>
+            <select  id="tipoPro" class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="tipoProEsp"required>
+                <option selected disabled readonly>Escoge un tipo</option>
+                
             </select>
             <br>
             <label><?php echo app('translator')->get('app.formato'); ?></label>
-            <select class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="formatoProEsp" required>
-                <option value="Envuelto">Envuelto</option>
-                <option value="Granel">Granel</option>
-                <option value="Blister">Blister</option>
+            <script>
+                $(document).ready(function() {
+                    var formatoPro = ["Envuelto", "Granel", "Blister"];
+            
+                    $.each(formatoPro, function(index, value) {
+                        $("#formatoPro").append(new Option(value, value));
+                    });
+                });
+            </script>
+            <select  id="formatoPro" class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="formatoProEsp"  required>
+                <option selected disabled readonly>Escoge un formato</option>
             </select>
             <br>
             <label><?php echo app('translator')->get('app.descripcion'); ?></label>

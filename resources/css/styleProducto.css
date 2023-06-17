@@ -103,6 +103,18 @@
   }
 
 
+  .boton-logout {
+    background-color: #674d3c;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 20px;
+    font-family: titulo;
+    text-decoration: none; 
+  }
+
   
   
   .buttonLogin {
@@ -277,6 +289,9 @@
   font-weight: bold;
   text-decoration: none;
 }
+
+
+
 
 
 

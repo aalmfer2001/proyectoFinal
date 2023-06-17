@@ -1,53 +1,33 @@
-@extends("layouts.app")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-@section("main")
-
-    <div class="bg-orange-100 w-full max-w-md mx-auto">
-
-        
-
-        <form class="bg-yellow-100 shadow-md rounded px-8 pt-6 pb-8 mb-4" action="{{ route("producto.guardar") }}" method="post">
-            <h1 class="mb-4 text-center text-4xl font-bold">@lang('app.encargo')</h1>
-            @csrf
-            <label>@lang('app.nombre')</label>
-            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="nomPro" required/>
-            <br>
-            <label>@lang('app.tipo')</label>
-            <select  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="tipoPro"required>
-                <option value="Con azucar">Con Azucar</option>
-                <option value="Sin azucar">Sin Azucar</option>
-                <option value="Con edulcorante">Con edulcorante</option>
+    <title>DISJUALTO</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js','resources/css/stylePedido.css'])
+</head>
+<body class="bg-crema">
+    <div class="pedido-insertar-producto">
+        <div class="form-group">
+            <label for="producto">Producto:</label>
+            <select name="producto" id="producto" class="form-control">
+                <option value="">Seleccione un producto</option>
+                <!-- Aquí puedes generar dinámicamente las opciones de productos -->
+                <option value="1">Producto 1</option>
+                <option value="2">Producto 2</option>
+                <option value="3">Producto 3</option>
             </select>
-            <br>
-            <label>@lang('app.formato')</label>
-            <select  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="formatoPro"  required>
-                <option value="Envuelto">Envuelto</option>
-                <option value="Granel">Granel</option>
-                <option value="Blister">Blister</option>
-            </select>
-            <br>
-            
-            <label>precio</label>
-            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="precioPro" required/>
-            <br>
-
-            <label>Imagen</label>
-            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="imgPro" required/>
-            <br>
-        
-            <div class="flex items-center justify-center">
-                <div class=" w-64 h-64 flex items-center justify-center rounded-lg">
-                    <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded">Crear Producto</button>
-                </div>
-              </div>
-        
-           </form>
-
+        </div>
+    
+        <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" name="cantidad" id="cantidad" class="form-control">
+        </div>
+    
+        <button class="btn btn-primary" onclick="agregarProducto()">Agregar Producto</button>
     </div>
-   
-
-   @if ($errors->any())
-    {{ $errors->first("numero") }}
-   @endif
-
-@endsection
+</body>
+</html>

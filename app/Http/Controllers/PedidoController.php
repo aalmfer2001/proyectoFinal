@@ -35,7 +35,7 @@ class PedidoController extends Controller
 
 
 
-    public function borrar(Request $req,$idPro)
+    public function borrar(Request $req,$idPedido)
     {
         $userId = auth()->user()->idUsu;
         $pedido = Pedido::where('idPedido', $idPedido)->where('idUsu',$userId);

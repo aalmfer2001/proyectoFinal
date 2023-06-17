@@ -19,7 +19,7 @@
             <a href="{{route("etiquetaPers.listar")}}">Etiquetas</a>
             <a href="{{route("productoEsp.listar")}}">Encargos</a>
             <a href="{{route("producto.listar")}}">Productos</a>
-            <a href="#">Mis Pedidos</a>
+            <a href="{{route("pedido.listar")}}">Mis Pedidos</a>
         </div>
 
 
@@ -33,7 +33,7 @@
         </div>
           <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button class="boton-login"><svg fill="#ffffff" width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3.651 16.989h17.326c0.553 0 1-0.448 1-1s-0.447-1-1-1h-17.264l3.617-3.617c0.391-0.39 0.391-1.024 0-1.414s-1.024-0.39-1.414 0l-5.907 6.062 5.907 6.063c0.196 0.195 0.451 0.293 0.707 0.293s0.511-0.098 0.707-0.293c0.391-0.39 0.391-1.023 0-1.414zM29.989 0h-17c-1.105 0-2 0.895-2 2v9h2.013v-7.78c0-0.668 0.542-1.21 1.21-1.21h14.523c0.669 0 1.21 0.542 1.21 1.21l0.032 25.572c0 0.668-0.541 1.21-1.21 1.21h-14.553c-0.668 0-1.21-0.542-1.21-1.21v-7.824l-2.013 0.003v9.030c0 1.105 0.895 2 2 2h16.999c1.105 0 2.001-0.895 2.001-2v-28c-0-1.105-0.896-2-2-2z"></path> </g></svg></button>
+            <button class="boton-logout"><svg fill="#ffffff" width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3.651 16.989h17.326c0.553 0 1-0.448 1-1s-0.447-1-1-1h-17.264l3.617-3.617c0.391-0.39 0.391-1.024 0-1.414s-1.024-0.39-1.414 0l-5.907 6.062 5.907 6.063c0.196 0.195 0.451 0.293 0.707 0.293s0.511-0.098 0.707-0.293c0.391-0.39 0.391-1.023 0-1.414zM29.989 0h-17c-1.105 0-2 0.895-2 2v9h2.013v-7.78c0-0.668 0.542-1.21 1.21-1.21h14.523c0.669 0 1.21 0.542 1.21 1.21l0.032 25.572c0 0.668-0.541 1.21-1.21 1.21h-14.553c-0.668 0-1.21-0.542-1.21-1.21v-7.824l-2.013 0.003v9.030c0 1.105 0.895 2 2 2h16.999c1.105 0 2.001-0.895 2.001-2v-28c-0-1.105-0.896-2-2-2z"></path> </g></svg></button>
         </form>
         
         </div>
@@ -42,6 +42,8 @@
     <div class="section">
         
         <div class="right-section">
+            
+            @if (Auth::user()->rol=="usuario")
             <h1 class="text-center text-4xl titulo">Etiqueta Personalizada</h1>
             <h2 class="text-center text-2xl">Introduce los datos de tu/s tienda/s</h2>
             <div class="table-container">
@@ -75,10 +77,38 @@
                     <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="{{route("etiquetaPers.crear")}}">@lang('app.crear')</a>
                 </div>
               </div>
+              @endif 
+              @if (Auth::user()->rol=="admin")
+              <h1 class="text-center text-4xl titulo">Etiqueta Personalizada</h1>
+            <h2 class="text-center text-2xl">Todas las etiquetas de los usuarios</h2>
+              <div class="table-container">
+                <table class="text-center m-auto mt-5 bg-marron separate text-white">
+                    <thead>
+                        <tr>
+                            <th class="p-3">Id del Usuario</th>
+                            <th class="p-3">Nombre</th>
+                            <th class="p-3">Localidad</th>
+                            <th class="p-3">Numero de teléfono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                @foreach ($datosAdmin as $itemAdmin)
+                    
+                        <tr>
+                            <td class="border border-gray-400 p-3">{{$itemAdmin->idUsu}}</td>
+                            <td class="border border-gray-400 p-3">{{$itemAdmin->nomTienEtiq}}</td>
+                            <td class="border border-gray-400 p-3">{{$itemAdmin->localiTienEtiq}}</td>
+                            <td class="border border-gray-400 p-3">{{$itemAdmin->numTelfTienEtiq}}</td>
+                           
+                @endforeach
+                    </tbody>
+            </table>
+            </div>
+            @endif 
         </div>
         <div class="left-section">
             <div class="image-container">
-                <img class="imgPatata" src="{{URL::asset('img/patatasMillan.jpg')}}" alt="Imagen 1">
+                <img class="imgPatata" src="{{URL::asset('img/patatasMillan.jpeg')}}" alt="Imagen 1">
             </div>
         </div>
     </div>

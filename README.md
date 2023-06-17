@@ -1,64 +1,66 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<h1>Anteproyecto </h1>
-<h2>Nombre de la Web</h2>
-DISJUALTO
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-<h2>Logo</h2>
-<div style="display:block;
-margin:auto;"><img src="https://github.com/aalmfer2001/proyectoFinal/blob/main/logoProyectoFinal.svg" width=400 height=400></img></div>
+## About Laravel
 
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-<h2>Temática</h2>
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Esta web es creada con el fin de que pueda ser usada en la empresa de mi padre, la cual trata de distribución a tiendas, supermercados  y panaderías de productos alimenticios , más concretamente de dulces y snacks. 
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-Básicamente la web va a constar de un catálogo de productos los cuales trabajan en la empresa, a partir de este catálogo se va a crear una sección la cual se van a poder hacer pedidos , otra sección que se va a poder crear encargos de tartas personalizadas y otra sección la cual se puede pedir encargos de que se puedan personalizar bolsas de patatas con el nombre de tu tienda y datos para hacerte publicidad en ellas.
+## Learning Laravel
 
-A su vez va a ver un usuario admin el cual tendrá una vista diferente de la web la cual podrá añadir productos nuevos y podrá indicar el día el cual los pedidos serán enviados
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-<h2>Tecnologías</h2>
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-Constará de una landing page de presentación de la página que su estilo estará creado enteramente con css , los datos de la web serán almacenados en una base de datos de mysql, la pagina sera lanzada desde una instancia de Amazon Web Service ,se usará javascript en el frontend en la medida de lo posible, los formularios de las secciones de productos personalizados tendrá un botón el cual rellene la información de estos mediante una api y el proyecto en su mayoría con laravel breeze y para el estilo de las secciones a parte de la landing serán creados con tailwind.
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Laravel Sponsors
 
-<h2>Estructura de la base de datos provisional</h2>
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-![image](https://user-images.githubusercontent.com/123627142/230653649-0d40b96e-2294-4c6c-a173-06fcbd64a944.png)
+### Premium Partners
 
-<h2>Diseño provisonal de la web</h2>
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
-<h3>Paleta de colores seleccionada</h3>
+## Contributing
 
-![image](https://user-images.githubusercontent.com/123627142/230800700-ef962d0d-de52-4768-a042-835711389f73.png)
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-<h3>Fuente seleccionada para títulos</h3>
+## Code of Conduct
 
-Prata
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-<h3>Fuente seleccionada para párrafos</h3>
+## Security Vulnerabilities
 
-Arial
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-<h3>Visualizacion de la web provisional</h3>
+## License
 
-- [Enlace al diseño en figma](https://www.figma.com/file/njiOFnphpiaWEPNLJFJ4qB/proyectoFinal_DISJUALTO?node-id=0%3A1&t=WBlKsXo1qxRqiOiM-1)
-
-
-<h1>Checkpoint </h1>
-<h2>Vídeo</h2>
-[Enlace para descargarlo](https://drive.google.com/file/d/1iljdXfgBNkktmF23GHU6GZX1pCrNMP7L/view?usp=share_link)
-
-<h3>Lo que he realizado</h3>
--Base de datos junto a migraciones factorias y seeder<br>
--El login y el register funcional <br>
--Pagina principal usando solo html y css a medias ya que tengo que mejorarla<br>
--Seccion de productos especiales con el estilo a mejorar<br>
-
-<h3>Lo que me queda</h3>
--Hacer la seccion de pedido,producto y etiqueta personalizada<br>
--Mejorar el estilo<br>
--Añadir api con javascript de localidades<br>
--Hacer la web para usuarios normales y para admin<br>
--subir el proyecto a amazon<br>
-
-
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

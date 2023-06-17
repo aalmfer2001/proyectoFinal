@@ -50,6 +50,7 @@ Route::group(["prefix" => "etiquetasPers",
               "middleware" => ["auth"]], function() 
 {
     Route::get("/",         [EtiquetaPersController::class, "listar"])->name("listar") ;
+    Route::get("/",         [EtiquetaPersController::class, "listar"])->name("listar") ;
     Route::get("/crear",    [EtiquetaPersController::class, "crear"])->name("crear") ;
     Route::post("/guardar",  [EtiquetaPersController::class, "guardar"])->name("guardar") ;
     Route::get("/borrar/{idEtiq}", [EtiquetaPersController::class, "borrar"])->name("borrar") ;
@@ -75,9 +76,11 @@ Route::group(["prefix" => "pedidos",
               "middleware" => ["auth"]], function() 
 {
     Route::get("/",         [PedidoController::class, "listar"])->name("listar") ;
-    Route::get("/crear",    [PedidoController::class, "crear"])->name("crear") ;
+    Route::get("/crear/{idPro?}",    [PedidoController::class, "crear"])->name("crear") ;
+    Route::get("/verPedidoActual/",    [PedidoController::class, "verPedidoActual"])->name("verPedidoActual") ;
     Route::post("/guardar",  [PedidoController::class, "guardar"])->name("guardar") ;
-    Route::get("/visualizar/{idPedido}", [PedidoController::class, "visualizar"])->name("visualizar") ;
+    Route::get("/borrarFila/{idPro}",  [PedidoController::class, "borrarFila"])->name("borrarFila") ;
+    Route::get("/visualizar/{idPedido}", [ProductoController::class, "visualizar"])->name("visualizar") ;
     Route::get("/borrar/{idPedido}", [PedidoController::class, "borrar"])->name("borrar") ;
     Route::get("/editar/{idPedido}", [PedidoController::class, "editar"])->name("editar") ;
     Route::post("/actualizar/{idPedido}", [PedidoController::class, "guardarEdicion"])->name("guardarEdicion") ;

@@ -99,6 +99,18 @@
     text-decoration: none; 
   }
 
+  .boton-logout {
+    background-color: #674d3c;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 20px;
+    font-family: titulo;
+    text-decoration: none; 
+  }
+
 
   
   
@@ -176,8 +188,8 @@
 }
 
 .image-container img {
-    max-width: 100%;
-    max-height:100%;
+    width: 300px;
+    height:400px;
     border: #a2836e 2px solid;
 }
 

@@ -29,7 +29,7 @@
         </div>
           <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button class="boton-login"><svg fill="#ffffff" width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3.651 16.989h17.326c0.553 0 1-0.448 1-1s-0.447-1-1-1h-17.264l3.617-3.617c0.391-0.39 0.391-1.024 0-1.414s-1.024-0.39-1.414 0l-5.907 6.062 5.907 6.063c0.196 0.195 0.451 0.293 0.707 0.293s0.511-0.098 0.707-0.293c0.391-0.39 0.391-1.023 0-1.414zM29.989 0h-17c-1.105 0-2 0.895-2 2v9h2.013v-7.78c0-0.668 0.542-1.21 1.21-1.21h14.523c0.669 0 1.21 0.542 1.21 1.21l0.032 25.572c0 0.668-0.541 1.21-1.21 1.21h-14.553c-0.668 0-1.21-0.542-1.21-1.21v-7.824l-2.013 0.003v9.030c0 1.105 0.895 2 2 2h16.999c1.105 0 2.001-0.895 2.001-2v-28c-0-1.105-0.896-2-2-2z"></path> </g></svg></button>
+            <button class="boton-logout"><svg fill="#ffffff" width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3.651 16.989h17.326c0.553 0 1-0.448 1-1s-0.447-1-1-1h-17.264l3.617-3.617c0.391-0.39 0.391-1.024 0-1.414s-1.024-0.39-1.414 0l-5.907 6.062 5.907 6.063c0.196 0.195 0.451 0.293 0.707 0.293s0.511-0.098 0.707-0.293c0.391-0.39 0.391-1.023 0-1.414zM29.989 0h-17c-1.105 0-2 0.895-2 2v9h2.013v-7.78c0-0.668 0.542-1.21 1.21-1.21h14.523c0.669 0 1.21 0.542 1.21 1.21l0.032 25.572c0 0.668-0.541 1.21-1.21 1.21h-14.553c-0.668 0-1.21-0.542-1.21-1.21v-7.824l-2.013 0.003v9.030c0 1.105 0.895 2 2 2h16.999c1.105 0 2.001-0.895 2.001-2v-28c-0-1.105-0.896-2-2-2z"></path> </g></svg></button>
         </form>
         
         </div>
@@ -37,32 +37,66 @@
         
       </div>
       <div class="contenedor">
-
-    <h1 class="text-center text-4xl font-bold titulo">Mis pedidos</h1>
-    <h2 class="text-center text-2xl font-bold titulo">Crea y visualiza tus pedidos</h2>
+        @if (Auth::user()->rol=="usuario")
+    <h1 class="text-center text-4xl font-bold titulo">Mi Pedido</h1>
+    <h2 class="text-center text-2xl font-bold titulo"> visualiza tu pedido</h2>
 
     <section class="section-container">
-      <h2>Listado de Pedidos</h2>
+      
+      
       <div class="table-container">
         <table class="table">
           <thead>
             <tr>
               <th>ID</th>
-              <th>Total</th>
               <th>Localidad</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
+            
             @foreach ($datos as $datos)
             <tr>
               <td>{{ $datos->idPedido }}</td>
-              <td>{{ $datos->totalPedi }}</td>
-              <td>{{ $datos->localiPedi }}</td>
+              <td>{{ Auth::user()->localidad }}</td>
               <td>
-                <a  class="action-link"href="{{route("pedido.visualizar", $datos->idPedido)}}">Ver</a>
-                <a  class="action-link">Editar</a>
-                <a  class="action-link" href="{{route("pedido.borrar", $datos->idPedido)}}">Borrar</a>
+                <a  class="boton-login"href="{{route("pedido.visualizar", $datos->idPedido)}}">Ver</a>
+                <a  class="boton-login" href="{{route("pedido.borrar", $datos->idPedido)}}">Borrar</a>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </section>
+    @endif 
+    @if (Auth::user()->rol=="admin")
+    <h1 class="text-center text-4xl font-bold titulo">Todos los Pedidos</h1>
+    <h2 class="text-center text-2xl font-bold titulo"> visualiza los Pedidos</h2>
+
+    <section class="section-container">
+      
+      
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID Usuario</th>
+              <th>ID Pedido</th>
+              
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            @foreach ($datosAdmin as $datosAdmin)
+            <tr>
+              
+              <td>{{ $datosAdmin->idUsu }}</td>
+              <td>{{ $datosAdmin->idPedido }}</td>
+              
+              <td>
+                <a  class="boton-login"href="{{route("pedido.visualizar", $datosAdmin->idPedido)}}">Ver</a>
               </td>
             </tr>
             @endforeach
@@ -71,10 +105,11 @@
       </div>
     </section>
     
-
+    @endif 
     </div>
 
 
 
 </body>
+
 </html>
