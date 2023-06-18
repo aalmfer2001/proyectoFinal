@@ -15,7 +15,7 @@
             <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="localiTienEtiq" required value="{{$etiquetaPersUpdate->localiTienEtiq}}" required/>
             <br>
             <label>@lang('app.labelEtiquetaTelefono')</label>
-            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="numTelfTienEtiq" required value="{{$etiquetaPersUpdate->numTelfTienEtiq}}" required/>
+            <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="numTelfTienEtiq" pattern="[0-9]{9}" required value="{{$etiquetaPersUpdate->numTelfTienEtiq}}" required/>
             <br>
         
             <div class="flex items-center justify-center">
