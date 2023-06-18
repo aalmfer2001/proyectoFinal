@@ -68,3 +68,11 @@ https://youtu.be/Sc1rLfvEMtg
 
 <h2>Enlace de la web</h2>
 34.225.196.224
+
+<h2>Bibliografía</h2>
+-Documentación de laravel
+-Video para traducir la página
+-Uso de svg repo para obtener SVGs
+-W3School
+-Documentación de aws
+
