@@ -26,7 +26,7 @@ public function visualizar($id)
         ->select('producto.*')
         ->distinct()
         ->where('idPedido', $id)
-        ->where('idUsu',$userId)
+        ->where('idUsu',$id)
         ->get();
 
         
