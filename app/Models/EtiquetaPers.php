@@ -10,7 +10,7 @@ class EtiquetaPers extends Model
 {
     use HasFactory;
 
-    protected $table="EtiquetaPers";
+    protected $table="etiquetaPers";
 
     protected $primaryKey="idEtiq";
 

@@ -28,10 +28,7 @@ public function visualizar($id)
         ->where('idPedido', $id)
         ->where('idUsu',$userId)
         ->get();
-    // $producto=Producto::whereIn('idPro', function ($query,$idPro){
-    //     $query->select($id)
-    //     ->from('pedido');})
-    //     ->get();
+
         
         
 

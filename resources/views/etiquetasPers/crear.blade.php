@@ -16,7 +16,7 @@
             <input class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="localiTienEtiq" required />
             <br>
             <label>@lang('app.labelEtiquetaTelefono')</label>
-            <input class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="numTelfTienEtiq" required />
+            <input class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="numTelfTienEtiq" pattern="[0-9]{9}" required />
             <br>
             <div class="flex items-center justify-center">
                 <div class=" w-64 h-64 flex items-center justify-center rounded-lg">
