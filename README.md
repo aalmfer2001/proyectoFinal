@@ -70,9 +70,10 @@ https://youtu.be/Sc1rLfvEMtg
 34.225.196.224
 
 <h2>Bibliografía</h2>
--Documentación de laravel
--Video para traducir la página
--Uso de svg repo para obtener SVGs
--W3School
--Documentación de aws
+- [Documentación de laravel](https://laravel.com/docs/10.x/readme)<br>
+- [Video para traducir la página](https://www.youtube.com/watch?v=e6ccPgI8aHk&t=517s)<br>
+- [Uso de svg repo para obtener SVGs](https://www.svgrepo.com/)<br>
+- [W3School](https://www.w3schools.com/)<br>
+- [Documentación de aws](https://docs.aws.amazon.com/es_es/)<br>
+
 
