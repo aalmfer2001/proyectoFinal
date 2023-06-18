@@ -7,7 +7,7 @@
         <form class="bg-yellow-100 shadow-md rounded px-8 pt-6 pb-8 mb-4" action="<?php echo e(route("producto.guardarEdicion", $productoUpdate->idPro)); ?>" method="post">
 
             <?php echo csrf_field(); ?>
-            <h1 class="mb-4 text-center text-4xl font-bold"><?php echo app('translator')->get('app.modificar'); ?></h1>
+            <h1 class="mb-4 text-center text-4xl font-bold"><?php echo app('translator')->get('app.tituloProductoEditar'); ?></h1>
             <label><?php echo app('translator')->get('app.nombre'); ?></label>
             <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="nomPro" required value="<?php echo e($productoUpdate->nomPro); ?>" required/>
             <br>
@@ -26,11 +26,11 @@
             </select>
             <br>
             
-            <label>precio</label>
+            <label><?php echo app('translator')->get('app.precio'); ?></label>
             <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="number" name="precioPro" value="<?php echo e($productoUpdate->precioPro); ?>" required/>
             <br>
 
-            <label>Imagen</label>
+            <label><?php echo app('translator')->get('app.imagen'); ?></label>
             <input  class="mb-4 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="imgPro" value="<?php echo e($productoUpdate->imgPro); ?>" required/>
             <br>
         

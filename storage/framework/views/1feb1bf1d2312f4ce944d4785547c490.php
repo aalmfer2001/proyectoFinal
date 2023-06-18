@@ -15,11 +15,11 @@
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
         <div class="custom-links">
-            <a href="<?php echo e(route("home")); ?>">Inicio</a>
-            <a href="<?php echo e(route("etiquetaPers.listar")); ?>">Etiquetas</a>
-            <a href="<?php echo e(route("productoEsp.listar")); ?>">Encargos</a>
-            <a href="<?php echo e(route("producto.listar")); ?>">Productos</a>
-            <a href="<?php echo e(route("pedido.listar")); ?>">Mis Pedidos</a>
+          <a href="<?php echo e(route("home")); ?>"><?php echo app('translator')->get('app.Inicio'); ?></a>
+          <a href="<?php echo e(route("etiquetaPers.listar")); ?>"><?php echo app('translator')->get('app.etiquetas'); ?></a>
+          <a href="<?php echo e(route("productoEsp.listar")); ?>"><?php echo app('translator')->get('app.encargos'); ?></a>
+          <a href="<?php echo e(route("producto.listar")); ?>"><?php echo app('translator')->get('app.productos'); ?></a>
+          <a href="<?php echo e(route("pedido.listar")); ?>"><?php echo app('translator')->get('app.miPedido'); ?></a>
         </div>
         <div class="conjuntoLogin">
         <div class="user-info">
@@ -38,8 +38,8 @@
       </div>
       <div class="contenedor">
         <?php if(Auth::user()->rol=="usuario"): ?>
-    <h1 class="text-center text-4xl font-bold titulo">Mi Pedido</h1>
-    <h2 class="text-center text-2xl font-bold titulo"> visualiza tu pedido</h2>
+    <h1 class="text-center text-4xl font-bold titulo"><?php echo app('translator')->get('app.miPedidoTitulo'); ?></h1>
+    <h2 class="text-center text-2xl font-bold titulo"><?php echo app('translator')->get('app.miPedidoSubTitulo'); ?> </h2>
 
     <section class="section-container">
       
@@ -48,9 +48,9 @@
         <table class="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Localidad</th>
-              <th>Acciones</th>
+              <th><?php echo app('translator')->get('app.id'); ?></th>
+              <th><?php echo app('translator')->get('app.localidad'); ?></th>
+              <th><?php echo app('translator')->get('app.acciones'); ?></th>
             </tr>
           </thead>
           <tbody>
@@ -60,8 +60,8 @@
               <td><?php echo e($datos->idPedido); ?></td>
               <td><?php echo e(Auth::user()->localidad); ?></td>
               <td>
-                <a  class="boton-login"href="<?php echo e(route("pedido.visualizar", $datos->idPedido)); ?>">Ver</a>
-                <a  class="boton-login" href="<?php echo e(route("pedido.borrar", $datos->idPedido)); ?>">Borrar</a>
+                <a  class="boton-login"href="<?php echo e(route("pedido.visualizar", $datos->idPedido)); ?>"><?php echo app('translator')->get('app.ver'); ?></a>
+                <a  class="boton-login" href="<?php echo e(route("pedido.borrar", $datos->idPedido)); ?>"><?php echo app('translator')->get('app.borrar'); ?></a>
               </td>
             </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -71,8 +71,8 @@
     </section>
     <?php endif; ?> 
     <?php if(Auth::user()->rol=="admin"): ?>
-    <h1 class="text-center text-4xl font-bold titulo">Todos los Pedidos</h1>
-    <h2 class="text-center text-2xl font-bold titulo"> visualiza los Pedidos</h2>
+    <h1 class="text-center text-4xl font-bold titulo"><?php echo app('translator')->get('app.miPedidoTituloAdmin'); ?></h1>
+    <h2 class="text-center text-2xl font-bold titulo"><?php echo app('translator')->get('app.miPedidoSubTituloAdmin'); ?> </h2>
 
     <section class="section-container">
       
@@ -81,10 +81,10 @@
         <table class="table">
           <thead>
             <tr>
-              <th>ID Usuario</th>
-              <th>ID Pedido</th>
+              <th><?php echo app('translator')->get('app.idUsu'); ?></th>
+              <th><?php echo app('translator')->get('app.idPedido'); ?></th>
               
-              <th>Acciones</th>
+              <th><?php echo app('translator')->get('app.acciones'); ?></th>
             </tr>
           </thead>
           <tbody>
@@ -96,7 +96,7 @@
               <td><?php echo e($datosAdmin->idPedido); ?></td>
               
               <td>
-                <a  class="boton-login"href="<?php echo e(route("pedido.visualizar", $datosAdmin->idPedido)); ?>">Ver</a>
+                <a  class="boton-login"href="<?php echo e(route("pedido.visualizar", $datosAdmin->idPedido)); ?>"><?php echo app('translator')->get('app.ver'); ?></a>
               </td>
             </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

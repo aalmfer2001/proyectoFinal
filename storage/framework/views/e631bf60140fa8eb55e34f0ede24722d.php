@@ -14,11 +14,24 @@
     <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
     <div id="enlaces" class="custom-links">
-      <a href="<?php echo e(route("home")); ?>">Inicio</a>
-      <a href="<?php echo e(route("etiquetaPers.listar")); ?>">Etiquetas</a>
-      <a href="<?php echo e(route("productoEsp.listar")); ?>">Encargos</a>
-      <a href="<?php echo e(route("producto.listar")); ?>">Productos</a>
-      <a href="<?php echo e(route("pedido.listar")); ?>">Mis Pedidos</a>
+      <a href="<?php echo e(route("home")); ?>"><?php echo app('translator')->get('app.Inicio'); ?></a>
+      <a href="<?php echo e(route("etiquetaPers.listar")); ?>"><?php echo app('translator')->get('app.etiquetas'); ?></a>
+      <a href="<?php echo e(route("productoEsp.listar")); ?>"><?php echo app('translator')->get('app.encargos'); ?></a>
+      <a href="<?php echo e(route("producto.listar")); ?>"><?php echo app('translator')->get('app.productos'); ?></a>
+      <a href="<?php echo e(route("pedido.listar")); ?>"><?php echo app('translator')->get('app.miPedido'); ?></a>
+
+      
+      
+        
+   
+      
+  </div>
+  <div class="dropdown">
+    <button  class="dropbtn titulo"><?php echo app('translator')->get('app.seleccion'); ?></button>
+    <div class="dropdown-content">
+      <a href="locale/en"><?php echo app('translator')->get('app.ingles'); ?></a>
+      <a href="locale/es"><?php echo app('translator')->get('app.español'); ?></a>
+    </div>
   </div>
   <div>
 
@@ -43,7 +56,7 @@
     
 <?php else: ?>
 <div>
-  <a href="<?php echo e(route('login')); ?>" class="boton-login">Login</a>
+  <a href="<?php echo e(route('login')); ?>" class="boton-login"><?php echo app('translator')->get('app.botonLogin'); ?></a>
 </div>
     
 <?php endif; ?>
@@ -181,16 +194,16 @@
 
 
     <div id="divCarta">
-      <h1 id="tituloCarta">Sobre nuestra empresa</h1>
+      <h1 id="tituloCarta"><?php echo app('translator')->get('app.sobreEmpresa'); ?></h1>
 
 
-          <p id="parrafoCarta">Disjualto es una empresa de distribución de dulces caseros e industriales que ha dejado una huella dulce en el mercado desde su fundación como "Dulces Isco" hasta su reciente transformación. La empresa ha logrado cautivar a los paladares de sus clientes durante años, ofreciendo una amplia gama de deliciosos dulces que se han convertido en la elección favorita de personas de todas las edades.<br><br> Con su nueva identidad como Disjualto, la empresa ha dado un salto audaz hacia el futuro, manteniendo la esencia de sus productos caseros tradicionales y añadiendo una selección de dulces industriales que se adaptan a las demandas y tendencias actuales.<br><br> Su compromiso con la calidad, la frescura y la satisfacción del cliente sigue siendo su principal enfoque, ya que se esfuerzan por entregar sabores exquisitos y experiencias dulces inolvidables. Disjualto se ha convertido en sinónimo de confianza y excelencia en el mundo de los dulces, y su evolución constante les asegura un lugar destacado en el corazón y en el paladar de los amantes de los dulces de toda Málaga</p>
+          <p id="parrafoCarta"><?php echo app('translator')->get('app.primerParrafo'); ?><br><br> <?php echo app('translator')->get('app.segundoParrafo'); ?><br><br><?php echo app('translator')->get('app.tercerParrafo'); ?> </p>
   </div>
 
 
 
   <div class="contenedor">
-    <h1 class="textoTarjetas">Galería de imágenes</h1>
+    <h1 class="textoTarjetas"><?php echo app('translator')->get('app.galeria'); ?></h1>
     <div class="galeria">
       <img src="<?php echo e(URL::asset('img/fachada.jpeg')); ?>" alt="Imagen 1">
       <img src="<?php echo e(URL::asset('img/pasilloDerecho.jpeg')); ?>" alt="Imagen 2">
@@ -202,30 +215,30 @@
 
     
     <div class="seccion">
-      <h1 class="textoTarjetas">Secciones</h1>
+      <h1 class="textoTarjetas"><?php echo app('translator')->get('app.secciones'); ?></h1>
       <div class="contenedor-tarjetas">
         <div class="fila-tarjetas">
           <div class="tarjeta">
             <img src="<?php echo e(URL::asset('img/productosesp.jpg')); ?>" alt="Imagen 1">
-            <h2>Encarga un producto personalizado</h2>
-            <a class="boton" href="<?php echo e(route("productoEsp.listar")); ?>">Visitar</a>
+            <h2><?php echo app('translator')->get('app.encargotexto'); ?></h2>
+            <a class="boton" href="<?php echo e(route("productoEsp.listar")); ?>"><?php echo app('translator')->get('app.Visitar'); ?></a>
           </div>
           <div class="tarjeta">
             <img src="<?php echo e(URL::asset('img/productos.jpg')); ?>" alt="Imagen 1">
-            <h2>Visualiza los productos que tenemos en venta</h2>
-            <a class="boton" href="<?php echo e(route("producto.listar")); ?>">Visitar</a>
+            <h2><?php echo app('translator')->get('app.productostexto'); ?></h2>
+            <a class="boton" href="<?php echo e(route("producto.listar")); ?>"><?php echo app('translator')->get('app.Visitar'); ?></a>
           </div>
         </div>
         <div class="fila-tarjetas">
           <div class="tarjeta">
             <img src="<?php echo e(URL::asset('img/etiquetapers.jpg')); ?>" alt="Imagen 1">
-            <h2>Personaliza las etiquetas para tener publicidad propia</h2>
-            <a class="boton" href="<?php echo e(route("etiquetaPers.listar")); ?>">Visitar</a>
+            <h2><?php echo app('translator')->get('app.etiquetatexto'); ?></h2>
+            <a class="boton" href="<?php echo e(route("etiquetaPers.listar")); ?>"><?php echo app('translator')->get('app.Visitar'); ?></a>
           </div>
           <div class="tarjeta">
             <img src="<?php echo e(URL::asset('img/pedidos.jpg')); ?>" alt="Imagen 1">
-            <h2>Revisa tus pedidos</h2>
-            <a class="boton" href="<?php echo e(route("pedido.listar")); ?>">Visitar</a>
+            <h2><?php echo app('translator')->get('app.pedidostexto'); ?></h2>
+            <a class="boton" href="<?php echo e(route("pedido.listar")); ?>"><?php echo app('translator')->get('app.Visitar'); ?></a>
           </div>
         </div>
       </div>
@@ -263,10 +276,10 @@
   <script  type="text/javascript" charset="utf-8" async defer>
     anime({
   targets: '#imgLogo',
-  translateY: ['-100%', '0%'], // Mover el logo desde arriba hasta su posición original
-  opacity: [0, 1], // Hacer que el logo se desvanezca gradualmente
-  easing: 'easeOutExpo', // Efecto de aceleración gradual
-  duration: 1500, // Duración de la animación en milisegundos
+  translateY: ['-100%', '0%'], 
+  opacity: [0, 1], 
+  easing: 'easeOutExpo', 
+  duration: 1500, 
   delay: 500 
 });
 </script>

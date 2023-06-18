@@ -15,11 +15,11 @@
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
         <div class="custom-links">
-            <a href="{{route("home")}}">Inicio</a>
-            <a href="{{route("etiquetaPers.listar")}}">Etiquetas</a>
-            <a href="{{route("productoEsp.listar")}}">Encargos</a>
-            <a href="{{route("producto.listar")}}">Productos</a>
-            <a href="{{route("pedido.listar")}}">Mis Pedidos</a>
+            <a href="{{route("home")}}">@lang('app.Inicio')</a>
+            <a href="{{route("etiquetaPers.listar")}}">@lang('app.etiquetas')</a>
+            <a href="{{route("productoEsp.listar")}}">@lang('app.encargos')</a>
+            <a href="{{route("producto.listar")}}">@lang('app.productos')</a>
+            <a href="{{route("pedido.listar")}}">@lang('app.miPedido')</a>
         </div>
 
 
@@ -44,15 +44,15 @@
         <div class="right-section">
             
             @if (Auth::user()->rol=="usuario")
-            <h1 class="text-center text-4xl titulo">Etiqueta Personalizada</h1>
-            <h2 class="text-center text-2xl">Introduce los datos de tu/s tienda/s</h2>
+            <h1 class="text-center text-4xl titulo font-bold">@lang('app.tituloEtiquetas')</h1>
+            <h2 class="text-center text-2xl font-bold titulo">@lang('app.subTituloEtiquetas')</h2>
             <div class="table-container">
                 <table class="text-center m-auto mt-5 bg-marron separate text-white">
                     <thead>
                         <tr>
-                            <th class="p-3">Nombre</th>
-                            <th class="p-3">Localidad</th>
-                            <th class="p-3">Numero de teléfono</th>
+                            <th class="p-3">@lang('app.nombre')</th>
+                            <th class="p-3">@lang('app.localidad')</th>
+                            <th class="p-3">@lang('app.numeroTelf')</th>
                             <th class="p-3">@lang('app.editar')</th>
                             <th class="p-3">@lang('app.borrar')</th>
                         </tr>
@@ -74,21 +74,21 @@
             </div>
             <div class="flex items-center justify-center">
                 <div class=" w-64 h-64 flex items-center justify-center rounded-lg">
-                    <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="{{route("etiquetaPers.crear")}}">@lang('app.crear')</a>
+                    <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="{{route("etiquetaPers.crear")}}">@lang('app.botonCrearEtiqueta')</a>
                 </div>
               </div>
               @endif 
               @if (Auth::user()->rol=="admin")
-              <h1 class="text-center text-4xl titulo">Etiqueta Personalizada</h1>
-            <h2 class="text-center text-2xl">Todas las etiquetas de los usuarios</h2>
+              <h1 class="text-center text-4xl titulo">@lang('app.tituloEtiquetas')</h1>
+            <h2 class="text-center text-2xl">@lang('app.tituloEtiquetasAdmin')</h2>
               <div class="table-container">
                 <table class="text-center m-auto mt-5 bg-marron separate text-white">
                     <thead>
                         <tr>
-                            <th class="p-3">Id del Usuario</th>
-                            <th class="p-3">Nombre</th>
-                            <th class="p-3">Localidad</th>
-                            <th class="p-3">Numero de teléfono</th>
+                            <th class="p-3">@lang('app.idUsu')</th>
+                            <th class="p-3">@lang('app.nombre')</th>
+                            <th class="p-3">@lang('app.localidad')</th>
+                            <th class="p-3">@lang('app.numeroTelf')</th>
                         </tr>
                     </thead>
                     <tbody>

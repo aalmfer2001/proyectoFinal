@@ -15,11 +15,11 @@
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
         <div class="custom-links">
-            <a href="{{route("home")}}">Inicio</a>
-            <a href="{{route("etiquetaPers.listar")}}">Etiquetas</a>
-            <a href="{{route("productoEsp.listar")}}">Encargos</a>
-            <a href="{{route("producto.listar")}}">Productos</a>
-            <a href="{{route("pedido.listar")}}">Mis Pedidos</a>
+          <a href="{{route("home")}}">@lang('app.Inicio')</a>
+          <a href="{{route("etiquetaPers.listar")}}">@lang('app.etiquetas')</a>
+          <a href="{{route("productoEsp.listar")}}">@lang('app.encargos')</a>
+          <a href="{{route("producto.listar")}}">@lang('app.productos')</a>
+          <a href="{{route("pedido.listar")}}">@lang('app.miPedido')</a>
         </div>
         <div class="conjuntoLogin">
         <div class="user-info">
@@ -38,8 +38,8 @@
       </div>
       <div class="contenedor">
         @if (Auth::user()->rol=="usuario")
-    <h1 class="text-center text-4xl font-bold titulo">Mi Pedido</h1>
-    <h2 class="text-center text-2xl font-bold titulo"> visualiza tu pedido</h2>
+    <h1 class="text-center text-4xl font-bold titulo">@lang('app.miPedidoTitulo')</h1>
+    <h2 class="text-center text-2xl font-bold titulo">@lang('app.miPedidoSubTitulo') </h2>
 
     <section class="section-container">
       
@@ -48,9 +48,9 @@
         <table class="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Localidad</th>
-              <th>Acciones</th>
+              <th>@lang('app.id')</th>
+              <th>@lang('app.localidad')</th>
+              <th>@lang('app.acciones')</th>
             </tr>
           </thead>
           <tbody>
@@ -60,8 +60,8 @@
               <td>{{ $datos->idPedido }}</td>
               <td>{{ Auth::user()->localidad }}</td>
               <td>
-                <a  class="boton-login"href="{{route("pedido.visualizar", $datos->idPedido)}}">Ver</a>
-                <a  class="boton-login" href="{{route("pedido.borrar", $datos->idPedido)}}">Borrar</a>
+                <a  class="boton-login"href="{{route("pedido.visualizar", $datos->idPedido)}}">@lang('app.ver')</a>
+                <a  class="boton-login" href="{{route("pedido.borrar", $datos->idPedido)}}">@lang('app.borrar')</a>
               </td>
             </tr>
             @endforeach
@@ -71,8 +71,8 @@
     </section>
     @endif 
     @if (Auth::user()->rol=="admin")
-    <h1 class="text-center text-4xl font-bold titulo">Todos los Pedidos</h1>
-    <h2 class="text-center text-2xl font-bold titulo"> visualiza los Pedidos</h2>
+    <h1 class="text-center text-4xl font-bold titulo">@lang('app.miPedidoTituloAdmin')</h1>
+    <h2 class="text-center text-2xl font-bold titulo">@lang('app.miPedidoSubTituloAdmin') </h2>
 
     <section class="section-container">
       
@@ -81,10 +81,10 @@
         <table class="table">
           <thead>
             <tr>
-              <th>ID Usuario</th>
-              <th>ID Pedido</th>
+              <th>@lang('app.idUsu')</th>
+              <th>@lang('app.idPedido')</th>
               
-              <th>Acciones</th>
+              <th>@lang('app.acciones')</th>
             </tr>
           </thead>
           <tbody>
@@ -96,7 +96,7 @@
               <td>{{ $datosAdmin->idPedido }}</td>
               
               <td>
-                <a  class="boton-login"href="{{route("pedido.visualizar", $datosAdmin->idPedido)}}">Ver</a>
+                <a  class="boton-login"href="{{route("pedido.visualizar", $datosAdmin->idPedido)}}">@lang('app.ver')</a>
               </td>
             </tr>
             @endforeach

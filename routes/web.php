@@ -6,6 +6,7 @@ use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\EtiquetaPersController;
 use App\Http\Controllers\PaginaPrincipalController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -82,8 +83,6 @@ Route::group(["prefix" => "pedidos",
     Route::get("/borrarFila/{idPro}",  [PedidoController::class, "borrarFila"])->name("borrarFila") ;
     Route::get("/visualizar/{idPedido}", [ProductoController::class, "visualizar"])->name("visualizar") ;
     Route::get("/borrar/{idPedido}", [PedidoController::class, "borrar"])->name("borrar") ;
-    Route::get("/editar/{idPedido}", [PedidoController::class, "editar"])->name("editar") ;
-    Route::post("/actualizar/{idPedido}", [PedidoController::class, "guardarEdicion"])->name("guardarEdicion") ;
 }) ;
 
 Route::group(["prefix" => "users", 
@@ -93,6 +92,8 @@ Route::group(["prefix" => "users",
     Route::post("/guardar",  [UserController::class, "guardar"])->name("guardar") ;
 
 }) ;
+
+Route::get("locale/{lange}",[LocalizationController::class,'setLang']);
 
 
 require __DIR__.'/auth.php';

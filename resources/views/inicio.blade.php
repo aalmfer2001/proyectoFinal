@@ -14,11 +14,25 @@
     <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
     <div id="enlaces" class="custom-links">
-      <a href="{{route("home")}}">Inicio</a>
-      <a href="{{route("etiquetaPers.listar")}}">Etiquetas</a>
-      <a href="{{route("productoEsp.listar")}}">Encargos</a>
-      <a href="{{route("producto.listar")}}">Productos</a>
-      <a href="{{route("pedido.listar")}}">Mis Pedidos</a>
+      <a href="{{route("home")}}">@lang('app.Inicio')</a>
+      <a href="{{route("etiquetaPers.listar")}}">@lang('app.etiquetas')</a>
+      <a href="{{route("productoEsp.listar")}}">@lang('app.encargos')</a>
+      <a href="{{route("producto.listar")}}">@lang('app.productos')</a>
+      <a href="{{route("pedido.listar")}}">@lang('app.miPedido')</a>
+
+      
+      
+        {{-- <a  href="locale/en">@lang('app.ingles')</a>
+        <a  href="locale/es">@lang('app.español')</a> --}}
+   
+      
+  </div>
+  <div class="dropdown">
+    <button  class="dropbtn titulo">@lang('app.seleccion')</button>
+    <div class="dropdown-content">
+      <a href="locale/en">@lang('app.ingles')</a>
+      <a href="locale/es">@lang('app.español')</a>
+    </div>
   </div>
   <div>
 
@@ -43,7 +57,7 @@
     
 @else
 <div>
-  <a href="{{ route('login') }}" class="boton-login">Login</a>
+  <a href="{{ route('login') }}" class="boton-login">@lang('app.botonLogin')</a>
 </div>
     
 @endif
@@ -181,16 +195,16 @@
 
 
     <div id="divCarta">
-      <h1 id="tituloCarta">Sobre nuestra empresa</h1>
+      <h1 id="tituloCarta">@lang('app.sobreEmpresa')</h1>
 
 
-          <p id="parrafoCarta">Disjualto es una empresa de distribución de dulces caseros e industriales que ha dejado una huella dulce en el mercado desde su fundación como "Dulces Isco" hasta su reciente transformación. La empresa ha logrado cautivar a los paladares de sus clientes durante años, ofreciendo una amplia gama de deliciosos dulces que se han convertido en la elección favorita de personas de todas las edades.<br><br> Con su nueva identidad como Disjualto, la empresa ha dado un salto audaz hacia el futuro, manteniendo la esencia de sus productos caseros tradicionales y añadiendo una selección de dulces industriales que se adaptan a las demandas y tendencias actuales.<br><br> Su compromiso con la calidad, la frescura y la satisfacción del cliente sigue siendo su principal enfoque, ya que se esfuerzan por entregar sabores exquisitos y experiencias dulces inolvidables. Disjualto se ha convertido en sinónimo de confianza y excelencia en el mundo de los dulces, y su evolución constante les asegura un lugar destacado en el corazón y en el paladar de los amantes de los dulces de toda Málaga</p>
+          <p id="parrafoCarta">@lang('app.primerParrafo')<br><br> @lang('app.segundoParrafo')<br><br>@lang('app.tercerParrafo') </p>
   </div>
 
 
 
   <div class="contenedor">
-    <h1 class="textoTarjetas">Galería de imágenes</h1>
+    <h1 class="textoTarjetas">@lang('app.galeria')</h1>
     <div class="galeria">
       <img src="{{URL::asset('img/fachada.jpeg')}}" alt="Imagen 1">
       <img src="{{URL::asset('img/pasilloDerecho.jpeg')}}" alt="Imagen 2">
@@ -202,30 +216,30 @@
 
     
     <div class="seccion">
-      <h1 class="textoTarjetas">Secciones</h1>
+      <h1 class="textoTarjetas">@lang('app.secciones')</h1>
       <div class="contenedor-tarjetas">
         <div class="fila-tarjetas">
           <div class="tarjeta">
             <img src="{{URL::asset('img/productosesp.jpg')}}" alt="Imagen 1">
-            <h2>Encarga un producto personalizado</h2>
-            <a class="boton" href="{{route("productoEsp.listar")}}">Visitar</a>
+            <h2>@lang('app.encargotexto')</h2>
+            <a class="boton" href="{{route("productoEsp.listar")}}">@lang('app.Visitar')</a>
           </div>
           <div class="tarjeta">
             <img src="{{URL::asset('img/productos.jpg')}}" alt="Imagen 1">
-            <h2>Visualiza los productos que tenemos en venta</h2>
-            <a class="boton" href="{{route("producto.listar")}}">Visitar</a>
+            <h2>@lang('app.productostexto')</h2>
+            <a class="boton" href="{{route("producto.listar")}}">@lang('app.Visitar')</a>
           </div>
         </div>
         <div class="fila-tarjetas">
           <div class="tarjeta">
             <img src="{{URL::asset('img/etiquetapers.jpg')}}" alt="Imagen 1">
-            <h2>Personaliza las etiquetas para tener publicidad propia</h2>
-            <a class="boton" href="{{route("etiquetaPers.listar")}}">Visitar</a>
+            <h2>@lang('app.etiquetatexto')</h2>
+            <a class="boton" href="{{route("etiquetaPers.listar")}}">@lang('app.Visitar')</a>
           </div>
           <div class="tarjeta">
             <img src="{{URL::asset('img/pedidos.jpg')}}" alt="Imagen 1">
-            <h2>Revisa tus pedidos</h2>
-            <a class="boton" href="{{route("pedido.listar")}}">Visitar</a>
+            <h2>@lang('app.pedidostexto')</h2>
+            <a class="boton" href="{{route("pedido.listar")}}">@lang('app.Visitar')</a>
           </div>
         </div>
       </div>
@@ -263,10 +277,10 @@
   <script  type="text/javascript" charset="utf-8" async defer>
     anime({
   targets: '#imgLogo',
-  translateY: ['-100%', '0%'], // Mover el logo desde arriba hasta su posición original
-  opacity: [0, 1], // Hacer que el logo se desvanezca gradualmente
-  easing: 'easeOutExpo', // Efecto de aceleración gradual
-  duration: 1500, // Duración de la animación en milisegundos
+  translateY: ['-100%', '0%'], 
+  opacity: [0, 1], 
+  easing: 'easeOutExpo', 
+  duration: 1500, 
   delay: 500 
 });
 </script>

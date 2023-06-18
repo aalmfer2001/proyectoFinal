@@ -15,11 +15,11 @@
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
         <div class="custom-links">
-            <a href="{{route("home")}}">Inicio</a>
-            <a href="{{route("etiquetaPers.listar")}}">Etiquetas</a>
-            <a href="{{route("productoEsp.listar")}}">Encargos</a>
-            <a href="{{route("producto.listar")}}">Productos</a>
-            <a href="{{route("pedido.listar")}}">Mis Pedidos</a>
+            <a href="{{route("home")}}">@lang('app.Inicio')</a>
+            <a href="{{route("etiquetaPers.listar")}}">@lang('app.etiquetas')</a>
+            <a href="{{route("productoEsp.listar")}}">@lang('app.encargos')</a>
+            <a href="{{route("producto.listar")}}">@lang('app.productos')</a>
+            <a href="{{route("pedido.listar")}}">@lang('app.miPedido')</a>
         </div>
         <div class="conjuntoLogin">
         <div class="user-info">
@@ -44,8 +44,8 @@
         
     @if (Auth::user()->rol=="usuario")
     <div id="seccionTabla">
-    <h1 class="text-center text-4xl font-bold">Encargos</h1>
-    <h2 class="text-center text-2xl font-bold">Encarga un producto personalizado</h2>
+    <h1 class="text-center text-4xl font-bold titulo">@lang('app.tituloEncargos')</h1>
+    <h2 class="text-center text-2xl font-bold titulo">@lang('app.subTituloEncargos')</h2>
 
        
         <table class="text-center m-auto mt-5 bg-marron separate text-white">
@@ -77,7 +77,7 @@
 
     <div class="flex items-center justify-center">
         <div class=" w-64 h-64 flex items-center justify-center rounded-lg">
-            <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="{{route("productoEsp.crear")}}">@lang('app.crear')</a>
+            <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="{{route("productoEsp.crear")}}">@lang('app.botonCrearEncargo')</a>
         </div>
       </div>
 @endif 
@@ -86,14 +86,14 @@
     
 @if (Auth::user()->rol=="admin")
 <div id="seccionTabla">
-<h1 class="text-center text-4xl font-bold titulo">Encargos</h1>
-<h2 class="text-center text-2xl font-bold titulo">Encarga un producto personalizado</h2>
+<h1 class="text-center text-4xl font-bold titulo">@lang('app.tituloEncargos')</h1>
+<h2 class="text-center text-2xl titulo">@lang('app.subTituloEncargosAdmin')</h2>
 
    
     <table class="text-center m-auto mt-5 bg-marron separate text-white">
         <thead>
             <tr>
-                <th class="p-3">Id del usuario</th>
+                <th class="p-3">@lang('app.idUsu')</th>
                 <th class="p-3">@lang('app.nombre')</th>
                 <th class="p-3">@lang('app.tipo') </th>
                 <th class="p-3">@lang('app.formato')</th>

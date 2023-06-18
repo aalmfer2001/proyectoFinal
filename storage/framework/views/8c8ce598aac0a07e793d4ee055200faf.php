@@ -15,11 +15,11 @@
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
         <div class="custom-links">
-            <a href="<?php echo e(route("home")); ?>">Inicio</a>
-            <a href="<?php echo e(route("etiquetaPers.listar")); ?>">Etiquetas</a>
-            <a href="<?php echo e(route("productoEsp.listar")); ?>">Encargos</a>
-            <a href="<?php echo e(route("producto.listar")); ?>">Productos</a>
-            <a href="<?php echo e(route("pedido.listar")); ?>">Mis Pedidos</a>
+          <a href="<?php echo e(route("home")); ?>"><?php echo app('translator')->get('app.Inicio'); ?></a>
+          <a href="<?php echo e(route("etiquetaPers.listar")); ?>"><?php echo app('translator')->get('app.etiquetas'); ?></a>
+          <a href="<?php echo e(route("productoEsp.listar")); ?>"><?php echo app('translator')->get('app.encargos'); ?></a>
+          <a href="<?php echo e(route("producto.listar")); ?>"><?php echo app('translator')->get('app.productos'); ?></a>
+          <a href="<?php echo e(route("pedido.listar")); ?>"><?php echo app('translator')->get('app.miPedido'); ?></a>
         </div>
         <div class="conjuntoLogin">
         <div class="user-info">
@@ -38,8 +38,8 @@
       </div>
       <div class="contenedor">
 
-    <h1 class="text-center text-4xl font-bold titulo">Catalogo</h1>
-    <h2 class="text-center text-2xl font-bold titulo">Visualiza todos los productos que tenemos</h2>
+    <h1 class="text-center text-4xl font-bold titulo"><?php echo app('translator')->get('app.Catalogo'); ?></h1>
+    <h2 class="text-center text-2xl font-bold titulo"><?php echo app('translator')->get('app.subCatalogo'); ?></h2>
     <?php if(Auth::user()->rol=="admin"): ?>
     <div class="flex items-center justify-center rounded-lg botonAjustado">
         <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route("producto.crear")); ?>"><?php echo app('translator')->get('app.crear'); ?></a>
@@ -59,7 +59,7 @@
               <p class="card-description"><?php echo e($item->formatoPro); ?></p>
                <?php if(Auth::user()->rol=="usuario"): ?>
               <div class="flex items-center justify-center rounded-lg botonAjustado">
-                <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route("pedido.crear",$item->idPro)); ?>">Añadir a pedido</a>
+                <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route("pedido.crear",$item->idPro)); ?>"><?php echo app('translator')->get('app.botonAddPedido'); ?></a>
               </div>
               <?php endif; ?> 
               <?php if(Auth::user()->rol=="admin"): ?>

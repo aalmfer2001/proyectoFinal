@@ -10,7 +10,7 @@
         </div>
 
         <div>
-            <x-input-label class="text-white" for="localidad" :value="__('Localidad')" />
+            <x-input-label class="text-white" for="localidad" :value="__('City')" />
             <x-text-input id="localidad" class="block mt-1 w-full" type="text" name="localidad" :value="old('localidad')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('localidad')" class="mt-2" />
         </div>

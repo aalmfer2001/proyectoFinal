@@ -15,11 +15,11 @@
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
         <div class="custom-links">
-            <a href="{{route("home")}}">Inicio</a>
-            <a href="{{route("etiquetaPers.listar")}}">Etiquetas</a>
-            <a href="{{route("productoEsp.listar")}}">Encargos</a>
-            <a href="{{route("producto.listar")}}">Productos</a>
-            <a href="{{route("pedido.listar")}}">Mis Pedidos</a>
+          <a href="{{route("home")}}">@lang('app.Inicio')</a>
+          <a href="{{route("etiquetaPers.listar")}}">@lang('app.etiquetas')</a>
+          <a href="{{route("productoEsp.listar")}}">@lang('app.encargos')</a>
+          <a href="{{route("producto.listar")}}">@lang('app.productos')</a>
+          <a href="{{route("pedido.listar")}}">@lang('app.miPedido')</a>
         </div>
         <div class="conjuntoLogin">
         <div class="user-info">
@@ -38,8 +38,8 @@
       </div>
       <div class="contenedor">
 
-    <h1 class="text-center text-4xl font-bold titulo">Catalogo</h1>
-    <h2 class="text-center text-2xl font-bold titulo">Visualiza todos los productos que tenemos</h2>
+    <h1 class="text-center text-4xl font-bold titulo">@lang('app.Catalogo')</h1>
+    <h2 class="text-center text-2xl font-bold titulo">@lang('app.subCatalogo')</h2>
     @if (Auth::user()->rol=="admin")
     <div class="flex items-center justify-center rounded-lg botonAjustado">
         <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="{{route("producto.crear")}}">@lang('app.crear')</a>
@@ -59,7 +59,7 @@
               <p class="card-description">{{$item->formatoPro}}</p>
                @if (Auth::user()->rol=="usuario")
               <div class="flex items-center justify-center rounded-lg botonAjustado">
-                <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="{{route("pedido.crear",$item->idPro)}}">Añadir a pedido</a>
+                <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="{{route("pedido.crear",$item->idPro)}}">@lang('app.botonAddPedido')</a>
               </div>
               @endif 
               @if (Auth::user()->rol=="admin")

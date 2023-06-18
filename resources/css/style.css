@@ -4,6 +4,68 @@
   }
   
 
+
+
+  /* Estilo para el botón principal del desplegable */
+.dropbtn {
+  color: #fff;
+  font-family: titulo;
+  background-color: #c5a087;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilo para el contenedor del desplegable */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: titulo;
+}
+
+/* Estilo para el contenido del desplegable */
+.dropdown-content {
+  font-family: titulo;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Estilo para los enlaces dentro del desplegable */
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  background-color: #a2836e;
+  text-decoration: none;
+  border: 2px solid black;
+  font-family: titulo;
+  display: block;
+}
+
+/* Estilo para los enlaces dentro del desplegable al pasar el ratón por encima */
+.dropdown-content a:hover {
+  background-color: #a2836e;
+}
+
+/* Estilo para mostrar el contenido del desplegable al pasar el ratón por encima del botón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilo para el desplegable cuando está abierto */
+.dropdown:hover .dropbtn {
+  background-color: #a2836e;
+}
+
+
+
+.titulo{
+  font-family: titulo;
+}
+/*////////////////////////////////////////////////////*/
+
   .custom-links {
     display: flex;
     font-family: titulo;

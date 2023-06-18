@@ -45,7 +45,7 @@
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="descProEsp" required/>
             <div class="flex items-center justify-center">
                 <div class=" w-64 h-64 flex items-center justify-center rounded-lg">
-                    <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded"><?php echo app('translator')->get('app.crear'); ?></button>
+                    <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded"><?php echo app('translator')->get('app.botonCrearEncargo'); ?></button>
                 </div>
               </div>
             

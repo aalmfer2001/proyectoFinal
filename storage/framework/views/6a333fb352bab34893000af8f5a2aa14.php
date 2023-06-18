@@ -15,11 +15,11 @@
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
         <div class="custom-links">
-            <a href="<?php echo e(route("home")); ?>">Inicio</a>
-            <a href="<?php echo e(route("etiquetaPers.listar")); ?>">Etiquetas</a>
-            <a href="<?php echo e(route("productoEsp.listar")); ?>">Encargos</a>
-            <a href="<?php echo e(route("producto.listar")); ?>">Productos</a>
-            <a href="<?php echo e(route("pedido.listar")); ?>">Mis Pedidos</a>
+            <a href="<?php echo e(route("home")); ?>"><?php echo app('translator')->get('app.Inicio'); ?></a>
+            <a href="<?php echo e(route("etiquetaPers.listar")); ?>"><?php echo app('translator')->get('app.etiquetas'); ?></a>
+            <a href="<?php echo e(route("productoEsp.listar")); ?>"><?php echo app('translator')->get('app.encargos'); ?></a>
+            <a href="<?php echo e(route("producto.listar")); ?>"><?php echo app('translator')->get('app.productos'); ?></a>
+            <a href="<?php echo e(route("pedido.listar")); ?>"><?php echo app('translator')->get('app.miPedido'); ?></a>
         </div>
         <div class="conjuntoLogin">
         <div class="user-info">
@@ -44,8 +44,8 @@
         
     <?php if(Auth::user()->rol=="usuario"): ?>
     <div id="seccionTabla">
-    <h1 class="text-center text-4xl font-bold">Encargos</h1>
-    <h2 class="text-center text-2xl font-bold">Encarga un producto personalizado</h2>
+    <h1 class="text-center text-4xl font-bold titulo"><?php echo app('translator')->get('app.tituloEncargos'); ?></h1>
+    <h2 class="text-center text-2xl font-bold titulo"><?php echo app('translator')->get('app.subTituloEncargos'); ?></h2>
 
        
         <table class="text-center m-auto mt-5 bg-marron separate text-white">
@@ -77,7 +77,7 @@
 
     <div class="flex items-center justify-center">
         <div class=" w-64 h-64 flex items-center justify-center rounded-lg">
-            <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route("productoEsp.crear")); ?>"><?php echo app('translator')->get('app.crear'); ?></a>
+            <a class="bg-marron-claro hover:bg-amber-700 text-white font-bold py-2 px-4 rounded" href="<?php echo e(route("productoEsp.crear")); ?>"><?php echo app('translator')->get('app.botonCrearEncargo'); ?></a>
         </div>
       </div>
 <?php endif; ?> 
@@ -86,14 +86,14 @@
     
 <?php if(Auth::user()->rol=="admin"): ?>
 <div id="seccionTabla">
-<h1 class="text-center text-4xl font-bold titulo">Encargos</h1>
-<h2 class="text-center text-2xl font-bold titulo">Encarga un producto personalizado</h2>
+<h1 class="text-center text-4xl font-bold titulo"><?php echo app('translator')->get('app.tituloEncargos'); ?></h1>
+<h2 class="text-center text-2xl titulo"><?php echo app('translator')->get('app.subTituloEncargosAdmin'); ?></h2>
 
    
     <table class="text-center m-auto mt-5 bg-marron separate text-white">
         <thead>
             <tr>
-                <th class="p-3">Id del usuario</th>
+                <th class="p-3"><?php echo app('translator')->get('app.idUsu'); ?></th>
                 <th class="p-3"><?php echo app('translator')->get('app.nombre'); ?></th>
                 <th class="p-3"><?php echo app('translator')->get('app.tipo'); ?> </th>
                 <th class="p-3"><?php echo app('translator')->get('app.formato'); ?></th>

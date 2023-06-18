@@ -17,11 +17,11 @@
         <a class="enlaceCabecera" href="#">DISJUALTO</a>
 
         <div class="custom-links">
-            <a href="<?php echo e(route("home")); ?>">Inicio</a>
-            <a href="<?php echo e(route("etiquetaPers.listar")); ?>">Etiquetas</a>
-            <a href="<?php echo e(route("productoEsp.listar")); ?>">Encargos</a>
-            <a href="<?php echo e(route("producto.listar")); ?>">Productos</a>
-            <a href="<?php echo e(route("pedido.listar")); ?>">Mis Pedidos</a>
+            <a href="<?php echo e(route("home")); ?>"><?php echo app('translator')->get('app.Inicio'); ?></a>
+            <a href="<?php echo e(route("etiquetaPers.listar")); ?>"><?php echo app('translator')->get('app.etiquetas'); ?></a>
+            <a href="<?php echo e(route("productoEsp.listar")); ?>"><?php echo app('translator')->get('app.encargos'); ?></a>
+            <a href="<?php echo e(route("producto.listar")); ?>"><?php echo app('translator')->get('app.productos'); ?></a>
+            <a href="<?php echo e(route("pedido.listar")); ?>"><?php echo app('translator')->get('app.miPedido'); ?></a>
         </div>
         <div class="conjuntoLogin">
         <div class="user-info">
@@ -53,9 +53,9 @@
         </div>
         <div class="detalles">
             <h2><?php echo e($datos->nomPro); ?></h2>
-            <p>Tipo: <?php echo e($datos->tipoPro); ?></p>
-            <p>Formato: <?php echo e($datos->formatoPro); ?></p>
-            <p>Precio: <?php echo e($datos->precioPro); ?></p>
+            <p><?php echo app('translator')->get('app.tipo'); ?>: <?php echo e($datos->tipoPro); ?></p>
+            <p><?php echo app('translator')->get('app.formato'); ?>: <?php echo e($datos->formatoPro); ?></p>
+            <p><?php echo app('translator')->get('app.precio'); ?>: <?php echo e($datos->precioPro); ?> €</p>
             <?php if(Auth::user()->rol==="usuario"): ?>
             <a href="#" class="card-action-delete"><a class=""  href="<?php echo e(route("pedido.borrarFila",$datos->idPro)); ?>"><svg width="30px" height="30px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#ec0000" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M45.49,54.87h-27a1,1,0,0,1-1-1l-2-36H48.46l-2,36A1,1,0,0,1,45.49,54.87Z"></path><path d="M51,17.86H13c-.28,0-.5-.16-.5-.35l.93-4.35a.49.49,0,0,1,.5-.3H50.07a.49.49,0,0,1,.5.3l.93,4.35C51.5,17.7,51.28,17.86,51,17.86Z"></path><line x1="24" y1="23.44" x2="24" y2="48.44"></line><line x1="32" y1="23.44" x2="32" y2="48.44"></line><line x1="40" y1="23.44" x2="40" y2="48.44"></line><path d="M25.73,12.86V7.57a1,1,0,0,1,1-1H37.27a1,1,0,0,1,1,1v5.29"></path></g></svg></a></a>
             <?php endif; ?>
@@ -72,7 +72,7 @@
 
             
 
-        <a  class=" boton-login" href="<?php echo e(route("pedido.listar")); ?>">Volver a Menu</a>
+        <a  class=" boton-login" href="<?php echo e(route("pedido.listar")); ?>"><?php echo app('translator')->get('app.menu'); ?></a>
       </section>
       
 
